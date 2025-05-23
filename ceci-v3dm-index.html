@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <title>台灣世曦工程顧問股份有限公司 V3DM 平台</title>
+  <style>
+    body {
+      font-family: "Segoe UI", "Noto Sans TC", sans-serif;
+      background-color: #f5f7fa;
+      margin: 0;
+      padding: 3em 1em;
+      color: #2e3b4e;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: auto;
+    }
+
+    .header {
+      display: flex;
+      align-items: flex-end; /* 讓 logo 與文字底部對齊 */
+      justify-content: center;
+      gap: 16px;
+      padding-bottom: 1em;
+      border-bottom: 2px solid #ccc;
+      margin-bottom: 2em;
+    }
+
+    .logo {
+      width: 60px;
+      height: auto;
+    }
+
+    h1 {
+      color: #1a2533;
+      font-size: 2.5rem;
+      margin: 0;
+      padding-bottom: 4px; /* 微調對齊感 */
+    }
+
+    #searchInput {
+      width: 100%;
+      padding: 0.8em 1em;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      margin-bottom: 2em;
+      box-sizing: border-box;
+    }
+
+    .card {
+      background: #ffffff;
+      border-left: 5px solid #2f4c78;
+      border-radius: 8px;
+      padding: 1.5em 1.8em;
+      margin-bottom: 1.5em;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+      transition: transform 0.2s ease;
+      width: 100%; /* 滿寬 */
+      box-sizing: border-box;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+    }
+
+    .card p {
+      margin: 0.6em 0;
+      font-size: 1.5rem;
+      line-height: 1.5;
+    }
+
+    .card strong {
+      display: inline-block;
+      width: 130px;
+      color: #1a2533;
+    }
+
+    .card a {
+      color: #1d5faa;
+      text-decoration: none;
+    }
+
+    .card a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <img class="logo" src="V3DM LOGO.png" alt="V3DM Logo">
+      <h1>台灣世曦工程顧問股份有限公司 V3DM 平台</h1>
+    </div>
+
+    <input type="text" id="searchInput" placeholder="🔍輸入專案名稱、計畫編號或網址進行搜尋…">
+
+    <div class="card">
+        <p><strong>專案名稱：</strong>臺北都會區大眾捷運系統環狀線東環段</p>
+        <p><strong>計畫編號：</strong>11036</p>
+        <p><strong>網址：</strong><a href="https://v3dm.ceci.com.tw/ceci-rt" target="_blank">https://v3dm.ceci.com.tw/ceci-rt</a></p>
+      </div>
+  
+      <div class="card">
+        <p><strong>專案名稱：</strong>台灣世曦港灣部</p>
+        <p><strong>計畫編號：</strong>XXXXX</p>
+        <p><strong>網址：</strong><a href="https://v3dm.ceci.com.tw/ceci-hb/" target="_blank">https://v3dm.ceci.com.tw/ceci-hb/</a></p>
+      </div>
+  
+      <div class="card">
+        <p><strong>專案名稱：</strong>桃園市龜山區樂善安居社會住宅新建工程</p>
+        <p><strong>計畫編號：</strong>XXXXX</p>
+        <p><strong>網址：</strong><a href="https://v3dm.ceci.com.tw/lsaj" target="_blank">https://v3dm.ceci.com.tw/lsaj</a></p>
+      </div>
+  
+      <div class="card">
+        <p><strong>專案名稱：</strong>高雄國際機場新航廈工程第一期建設計畫-1-2期新航廈工程</p>
+        <p><strong>計畫編號：</strong>XXXXX</p>
+        <p><strong>網址：</strong><a href="https://v3dm.ceci.com.tw/khh" target="_blank">https://v3dm.ceci.com.tw/khh</a></p>
+      </div>
+  
+      <div class="card">
+          <p><strong>專案名稱：</strong>{專案名稱}</p>
+          <p><strong>計畫編號：</strong>XXXXX</p>
+          <p><strong>網址：</strong><a href="https://v3dm.ceci.com.tw/XXXX" target="_blank">https://v3dm.ceci.com.tw/XXXX</a></p>
+        </div>
+  
+        <div class="card">
+          <p><strong>專案名稱：</strong>{專案名稱}</p>
+          <p><strong>計畫編號：</strong>XXXXX</p>
+          <p><strong>網址：</strong><a href="https://v3dm.ceci.com.tw/XXXX" target="_blank">https://v3dm.ceci.com.tw/XXXX</a></p>
+        </div>
+        
+        <div class="card">
+          <p><strong>專案名稱：</strong>{專案名稱}</p>
+          <p><strong>計畫編號：</strong>XXXXX</p>
+          <p><strong>網址：</strong><a href="https://v3dm.ceci.com.tw/XXXX" target="_blank">https://v3dm.ceci.com.tw/XXXX</a></p>
+        </div>
+
+    <!-- 你可以在此加更多案件區塊 -->
+
+  </div>
+
+  <script>
+    const input = document.getElementById('searchInput');
+    input.addEventListener('keyup', function () {
+      const keyword = this.value.toLowerCase();
+      const cards = document.querySelectorAll('.card');
+      cards.forEach(card => {
+        const text = card.textContent.toLowerCase();
+        card.style.display = text.includes(keyword) ? 'block' : 'none';
+      });
+    });
+  </script>
+</body>
+</html>
